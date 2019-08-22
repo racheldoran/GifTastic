@@ -5,12 +5,13 @@ $(document).ready(function () {
 
 var gif = ["Bob Dylan", "Waylon Jennings", "Marshall Tucker Band", "The Doobie Brothers"];
 
+
 // Function for dumping the JSON content for each button into the div
 $("button").on("click", function() {
     var person = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
       person + "&api_key=MuglAHZY6tEW36wfJ2k6Alpr9UM1eaKg&limit=10";
-
+     
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -25,6 +26,8 @@ $("button").on("click", function() {
 
           var p = $("<p>").text("Rating: " + rating);
 
+          var a = $("#add-gif").prepend(response.data)
+
           var personImage = $("<img>");
           personImage.attr("src", results[i].images.fixed_height.url);
 
@@ -35,4 +38,8 @@ $("button").on("click", function() {
           
         }
       });
+    
   });
+ 
+
+  
