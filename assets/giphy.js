@@ -32,6 +32,7 @@ $("button").on("click", function() {
           gifDiv.prepend(personImage);
 
           $("#gifs-appear-here").prepend(gifDiv);
+          
         }
       });
   });
