@@ -32,4 +32,22 @@ $("button").on("click", function () {
                 $("#gifs-appear-here").prepend(gifDiv);
             }
         });
+        $("#add-gif").on("click", function(event) {
+            // Preventing the buttons default behavior when clicked (which is submitting a form)
+            event.preventDefault();
+            // This line grabs the input from the textbox
+            var gif = $("gif-input").val()
+    
+            // Adding the movie from the textbox to our array
+            gif.push(person);
+    
+            // Calling renderButtons which handles the processing of our movie array
+            renderButtons();
+    
+          });
+
+
+
+
+
 });
