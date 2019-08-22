@@ -11,13 +11,15 @@ $("button").on("click", function() {
     var person = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
       person + "&api_key=MuglAHZY6tEW36wfJ2k6Alpr9UM1eaKg&limit=10";
-     
+     console.log(queryURL)
+
     $.ajax({
       url: queryURL,
       method: "GET"
     })
       .then(function(response) {
         var results = response.data;
+        console.log(response)
 
         for (var i = 0; i < results.length; i++) {
           var gifDiv = $("<div>");
@@ -36,10 +38,19 @@ $("button").on("click", function() {
 
           $("#gifs-appear-here").prepend(gifDiv);
           
+          renderButtons();
         }
-      });
-    
-  });
- 
 
+      });
+      
+
+      function renderButtons() {
+
+        // Deleting the movies prior to adding new movies
+        // (this is necessary otherwise we will have repeat buttons)
+        $("#buttons-view").empty();
+
+  };
+  
+})
   
