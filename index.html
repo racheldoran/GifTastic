@@ -15,41 +15,21 @@
 <body>
     <div class="container">
 
-        <div id="gif-view"></div>
-
-        <div class="row">
-            <div class="col-md-8">
-                <h1>Giftastic Ya'll!</h1>
-                <div id="buttons-view"></div>
-
-                <form id="gif-form">
-                    <label for="gif-input">Add a Gif!</label>
-                    <input type="text" id="gif-input"><br>
-
-                    <!-- Button triggers new movie to be added -->
-                    <input id="add-gif" type="submit" value="Add a Gif!">
-                </form>
-                <br>
-                <div id="buttons">
-                    <button data-person="bob dylan">
-                        it ain't me babe
-                    </button>
-                </div>
-                <div id="buttons">
-                    <button data-person="simon and garfunkel">
-                        hello darkness my old friend
-                    </button>
-                </div>
-                <div id="buttons">
-                    <button data-person="waylon jennings">
-                        thats what you get for loving me
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="gifs-appear-here">
-        </div>
+            <div class="container">
+                    <h1>Giftastic!</h1>
+                
+                     <!-- Rendered Buttons will get Dumped Here  -->
+                    <div id="buttons-view"></div>
+                    <br>
+                
+                    <form id="gif-form">
+                      <label for="gif-input">Add a Gif!</label>
+                      <br>
+                      <input type="text" id="gif-input"><br>
+                
+                      <!-- Button triggers new movie to be added -->
+                      <input id="add-gif" type="submit" value="Add a Gif!">
+                    </form>
 
         <script src="assets/giphy.js"></script>
     </div>
