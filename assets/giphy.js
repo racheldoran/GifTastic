@@ -20,6 +20,7 @@ $("button").on("click", function() {
       .then(function(response) {
         var results = response.data;
         console.log(response)
+        console.log(results)
 
         for (var i = 0; i < results.length; i++) {
           var gifDiv = $("<div>");
@@ -40,8 +41,23 @@ $("button").on("click", function() {
           
           renderButtons();
         }
+       
+      })
 
-      });
+      function buttonClick() {
+        var userInput = $('#gif-input').val();
+        searchGif(userInput);
+    }
+
+      function submitButton() {
+        var userInput = $('#gif-input').val();
+    
+        if (userInput) {
+            $('#add-gif').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-primary' value=' " + userInput + "'> " + userInput + " </button>");
+        }
+
+
+      };
       
 
       function renderButtons() {
