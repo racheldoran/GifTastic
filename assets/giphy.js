@@ -44,20 +44,8 @@ $("button").on("click", function() {
        
       })
 
-      function buttonClick() {
-        var userInput = $('#gif-input').val();
-        searchGif(userInput);
-    }
-
-      function submitButton() {
-        var userInput = $('#gif-input').val();
-    
-        if (userInput) {
-            $('#add-gif').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-primary' value=' " + userInput + "'> " + userInput + " </button>");
-        }
-
-
-      };
+      
+      ;
       
 
       function renderButtons() {
