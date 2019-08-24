@@ -5,11 +5,12 @@ $(document).ready(function () {
 
   var gif = ["Bob Dylan", "Waylon Jennings", "Tom Petty"];
 
-  $("button").on("click", function () {
+  function display () {
     var person = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
       person + "&api_key=MuglAHZY6tEW36wfJ2k6Alpr9UM1eaKg&limit=10";
     console.log(queryURL)
+    console.log(person)
 
     $.ajax({
       url: queryURL,
@@ -20,27 +21,27 @@ $(document).ready(function () {
         console.log(response)
         console.log(results)
 
-        for (var i = 0; i < results.length; i++) {
+        for (var i = 0; i < response.length; i++) {
           var gifDiv = $("<div>");
 
-          var rating = results[i].rating;
+          var rating = response[i].rating;
 
           var p = $("<p>").text("Rating: " + rating);
 
-          var a = $("#add-gif").prepend(response.data)
+          var a = $("#add-gif").append(response.data)
 
           var personImage = $("<img>");
-          personImage.attr("src", results[i].images.fixed_height.url);
+          personImage.attr("src", response[i].images.fixed_height.url);
 
-          gifDiv.prepend(p);
-          gifDiv.prepend(personImage);
+          gifDiv.append(p);
+          gifDiv.append(personImage);
 
-          $("#gifs-appear-here").prepend(gifDiv);
+          $("#gif-input").append(gifDiv);
 
         }
 
       })
-  })
+  }
 
   var displayGif = $("img")
 
@@ -69,6 +70,9 @@ $(document).ready(function () {
   });
   renderButtons();
 
-  $(document).on("click", "gif", displayGif);
-});
+  $(document).on("click", "gif", display);
+})
+
+
+
 
