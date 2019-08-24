@@ -45,13 +45,20 @@ $("button").on("click", function() {
       })
     })
 
-    var displayGif = $("#gif-input")
+    var displayGif = ["Bob Dylan"];
 
+    // Generic function for capturing the movie name from the data-attribute
+    function alertgifName() {
+      var displayGif = $(this).attr("data-name");
+      
+    }
+
+    // Function for displaying movie data
     function renderButtons() {
 
       // Deleting the movies prior to adding new movies
       // (this is necessary otherwise we will have repeat buttons)
-      $("#gif-input").empty();
+      $("#buttons-view").empty();
 
       // Looping through the array of movies
       for (var i = 0; i < displayGif.length; i++) {
@@ -70,18 +77,18 @@ $("button").on("click", function() {
       }
     }
 
+    // This function handles events where one button is clicked
+    $("#add-movie").on("click", function(event) {
+      // Preventing the buttons default behavior when clicked (which is submitting a form)
+      event.preventDefault();
+      // This line grabs the input from the textbox
+      var giffy = $("#gif-input").val().trim();
 
-      // This function handles events where one button is clicked
-      $("#add-gif").on("click", function(event) {
-        // Preventing the buttons default behavior when clicked (which is submitting a form)
-        event.preventDefault();
-        // This line grabs the input from the textbox
-        var giffy = $("#gif-input").val().trim();
+      // Adding the movie from the textbox to our array
+      displayGif.push(giffy);
 
-        // Adding the movie from the textbox to our array
-        giffy.push(gif);
+      // Calling renderButtons which handles the processing of our movie array
+      renderButtons();
 
-        // Calling renderButtons which handles the processing of our movie array
-        renderButtons();
-
-      });
+    });
+  
