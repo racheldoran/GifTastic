@@ -1,12 +1,10 @@
+
+
 $(document).ready(function () {
   console.log("yooooo girl!");
 
-
-
   var gif = ["Bob Dylan", "Waylon Jennings", "Tom Petty"];
 
-
-  // Function for dumping the JSON content for each button into the div
   $("button").on("click", function () {
     var person = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -50,12 +48,12 @@ $(document).ready(function () {
 
     $("#buttons-view").empty();
 
-    for (var i = 0; i < displayGif.length; i++) {
+    for (var i = 0; i < gif.length; i++) {
 
       var a = $("<button>");
       a.addClass("gif");
-      a.attr("data-person", displayGif[i]);
-      a.text(displayGif[i])
+      a.attr("data-person", gif[i]);
+      a.text(gif[i])
       $("#buttons-view").append(a);
     }
   }
@@ -63,13 +61,14 @@ $(document).ready(function () {
   $("#add-gif").on("click", function (event) {
     event.preventDefault();
     var giffy = $("#gif-input").val().trim();
-    displayGif.push(giffy);
+    gif.push(giffy);
     console.log(giffy)
   
-
     renderButtons();
 
   });
   renderButtons();
+
+  $(document).on("click", "gif", displayGif);
 });
 
