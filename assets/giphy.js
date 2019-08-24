@@ -44,12 +44,9 @@ $(document).ready(function () {
       })
   })
 
+  var displayGif = $("img")
 
-  var displayGif = $("#<div>")
-
-  // Function for displaying movie data
   function renderButtons() {
-
 
     $("#buttons-view").empty();
 
