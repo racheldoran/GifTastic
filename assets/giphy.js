@@ -17,7 +17,7 @@ $(document).ready(function () {
       method: "GET"
     })
       .then(function (response) {
-        var results = response.data;
+        var response = response.data;
         console.log(response)
         console.log(results)
 
@@ -70,7 +70,8 @@ $(document).ready(function () {
   });
   renderButtons();
 
-  $(document).on("click", "gif", display);
+  $(document).on("click", display, displayGif);
+  $(document).on("click", "gif", "#gif-input");
 })
 
 
