@@ -64,9 +64,12 @@ $(document).ready(function () {
     event.preventDefault();
     var giffy = $("#gif-input").val().trim();
     displayGif.push(giffy);
+    console.log(giffy)
+  
 
     renderButtons();
 
   });
   renderButtons();
 });
+
