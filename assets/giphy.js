@@ -54,7 +54,7 @@ $(document).ready(function () {
 
       var a = $("<button>");
       a.addClass("gif");
-      a.attr("data-name", displayGif[i]);
+      a.attr("data-person", displayGif[i]);
       a.text(displayGif[i])
       $("#buttons-view").append(a);
     }
