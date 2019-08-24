@@ -36,7 +36,7 @@ $(document).ready(function () {
           gifDiv.append(p);
           gifDiv.append(personImage);
 
-          $("#gif-input").append(gifDiv);
+          $("#buttons-view").append(gifDiv);
 
         }
 
@@ -64,14 +64,16 @@ $(document).ready(function () {
     var giffy = $("#gif-input").val().trim();
     gif.push(giffy);
     console.log(giffy)
+    console.log(event)
   
+
     renderButtons();
 
   });
   renderButtons();
 
   $(document).on("click", display, displayGif);
-  $(document).on("click", "gif", "#gif-input");
+  
 })
 
 
