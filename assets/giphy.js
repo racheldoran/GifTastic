@@ -36,7 +36,7 @@ $(document).ready(function () {
           gifDiv.append(personImage);
           a.addClass(personImage)
 
-          $("#gifs-here").append(gifDiv);
+          $("#gifs-here").prepend(gifDiv);
        
 
 
