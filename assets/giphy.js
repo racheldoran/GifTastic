@@ -36,7 +36,8 @@ $(document).ready(function () {
           gifDiv.append(personImage);
           a.addClass(personImage)
 
-          $("#buttons-view").append(gifDiv);
+          $("#gifs-here").append(gifDiv);
+       
 
 
         }
@@ -44,7 +45,7 @@ $(document).ready(function () {
       })
   }
 
-
+ 
 
   function renderButtons() {
 
