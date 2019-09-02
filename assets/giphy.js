@@ -72,7 +72,7 @@ $(document).ready(function () {
   });
 
 
-  $(document).on("click", "img", function () {
+  $(document).on("click", ".gif", function () {
     var state = $(this).attr("data-state");
     console.log("State: " + state)
     if (state === "still") {
