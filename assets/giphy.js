@@ -30,7 +30,7 @@ $(document).ready(function () {
           var a = $("#add-gif").append(results.data)
 
           var personImage = $("<img>");
-          personImage.attr("src", results[i].images.fixed_height.url);
+          personImage.attr("src", results[i].images.fixed_height_still.url);
 
           gifDiv.append(p);
           gifDiv.append(personImage);
