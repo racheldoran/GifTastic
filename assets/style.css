@@ -1,10 +1,13 @@
 body{
     text-align:center;
-    font-family: 'Arimo', sans-serif;
-    
+    font-family: 'Arimo', sans-serif;   
 }
 
 #add-gif{
-
 width:178px;
 }
+
+.jumbotron {
+background: lightcoral;
+}
+
